@@ -30,6 +30,7 @@ module.exports = React.createClass({
 			var user = this.state.users[this.state.nick];
 			if (user.elo > 0 && user.level >= 0){ //zkls
 				var level = Math.max(0, Math.min(7, Math.floor((-0.12/this.cosh((user.level-61.9)/7.08)+1)*2.93*Math.log(Math.exp(-2.31)*user.level+1)-0.89/this.cosh((user.level-28.55)/3.4))));
+				//in emergency, replace with var level = _.findIndex([0, 5, 10, 20, 35, 50, 75, 100, Infinity], (x) => (x > user.level)) - 1; first
 				var skill = Math.max(0, Math.min(7, Math.floor((user.elo - 1000) / 200)));
 				img = require('img/ranks/' + level + '_' + skill + '.png');
 			}
