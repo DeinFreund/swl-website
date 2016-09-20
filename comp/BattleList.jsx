@@ -165,7 +165,7 @@ module.exports = React.createClass({
 		<div className="dialog">
 			<table><tbody>{options}</tbody></table>
 			<p> <button onClick={_.partial(this.handleJoinMM)}>
-				{this.state.queues.map(function(q){return q.Name}).filter(this.queueFilter).length == 0 ? "Abort" : "Join"}
+				{this.state.queues.map(function(q){return q.Name}).filter(this.queueFilter).length == 0 ? "Quit Matchmaking" : "Find Match"}
 			</button></p>
 		</div></ModalWindow>;
 	},
